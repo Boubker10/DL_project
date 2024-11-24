@@ -91,12 +91,12 @@ def validate_one_epoch(model, val_loader, criterion, device):
 
 def main():
     # Configuration
-    data_dir = "./dataset"
+    data_dir = "./processed_dataset"
     num_classes = 7
     batch_size = 32
     learning_rate = 0.001
-    num_epochs = 10
-    model_save_path = "./efficientnet_model.pth"
+    num_epochs = 20
+    model_save_path = "./efficientnet_model2.pth"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Charger les datasets et DataLoaders

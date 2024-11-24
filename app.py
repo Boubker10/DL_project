@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 import torch
 import numpy as np
 from PIL import Image
-from model import EfficientNet  # Assurez-vous que le modèle EfficientNet est bien importé
+from model import EfficientNet  
 from torchvision import transforms
 import base64
 from io import BytesIO
@@ -12,10 +12,9 @@ from io import BytesIO
 # Configuration de l'application
 class Config:
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-    # Les classes utilisées pendant l'entraînement
     CLASSES = ['carrot', 'eggplant', 'peas', 'potato', 'sweetcorn', 'tomato', 'turnip']
     IMAGE_SIZE = 128
-    MODEL_PATH = "efficientnet_model.pth"
+    MODEL_PATH = "efficientnet_model2.pth"
 
 # Charger le modèle entraîné
 def load_model(model_path, num_classes, device):
@@ -34,21 +33,19 @@ def load_model(model_path, num_classes, device):
         print(f"Erreur lors du chargement du modèle: {e}")
         return None
 
-# Transformations pour les images
+
 transform = transforms.Compose([
     transforms.Resize((Config.IMAGE_SIZE, Config.IMAGE_SIZE)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
 
-# Charger le modèle
 model = load_model(Config.MODEL_PATH, len(Config.CLASSES), Config.DEVICE)
 
-# Vérification si le modèle est chargé
 if model is None:
     raise RuntimeError("Le modèle n'a pas pu être chargé. Vérifiez le chemin ou le fichier du modèle.")
 
-# Application Dash
+
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
@@ -89,7 +86,7 @@ app.layout = dbc.Container([
     ])
 ])
 
-# Pipeline de prédiction
+
 def predict(image):
     try:
         # Préparer l'image
@@ -107,7 +104,7 @@ def predict(image):
         print(f"Erreur lors de la prédiction: {e}")
         return None, None
 
-# Créer des barres de probabilités
+
 def create_probability_bars(probabilities):
     max_index = np.argmax(probabilities)
     bars = []
