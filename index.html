@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegetable Classifier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="text-primary">Vegetable Classifier</h1>
+    </div>
+    <div class="content">
+      <div class="upload-container">
+        <h5 class="text-primary">Upload an image of a vegetable:</h5>
+        <div id="drop-zone" class="drop-zone">
+          <p>📤 Drag and Drop or <span>Click to Upload</span></p>
+          <input type="file" id="image-upload" accept="image/*">
+        </div>
+        <div id="output-image-upload" class="image-preview"></div>
+      </div>
+      <div class="prediction-container">
+        <h5 class="text-primary">Prediction and Probabilities:</h5>
+        <div id="prediction-output" class="prediction-output"></div>
+        <div id="probability-bars" class="probability-bars"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="text-primary">Powered by <a href="https://www.tensorflow.org/js" target="_blank">TensorFlow.js</a></p>
+      <footer class="text-muted">© 2024 Vegetable Classifier Boubker&Nathan</footer>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="app.js"></script>
+</body>
+</html>
