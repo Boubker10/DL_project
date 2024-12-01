@@ -6,20 +6,7 @@ from model import EfficientNet
 from tqdm import tqdm  # Import de tqdm pour la barre de progression
 
 def train_one_epoch(model, train_loader, criterion, optimizer, device):
-    """
-    Entraîne le modèle pendant une époque avec affichage de la progression.
-    
-    Args:
-        model (nn.Module): Le modèle à entraîner.
-        train_loader (DataLoader): DataLoader pour l'entraînement.
-        criterion (nn.Module): Fonction de perte.
-        optimizer (torch.optim.Optimizer): Optimiseur.
-        device (torch.device): CPU ou GPU.
 
-    Returns:
-        float: La perte moyenne.
-        float: L'exactitude sur l'ensemble d'entraînement.
-    """
     model.train()
     running_loss = 0.0
     correct = 0
