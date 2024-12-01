@@ -38,19 +38,7 @@ def train_one_epoch(model, train_loader, criterion, optimizer, device):
     return epoch_loss, accuracy
 
 def validate_one_epoch(model, val_loader, criterion, device):
-    """
-    Valide le modèle pendant une époque avec affichage de la progression.
-    
-    Args:
-        model (nn.Module): Le modèle à valider.
-        val_loader (DataLoader): DataLoader pour la validation.
-        criterion (nn.Module): Fonction de perte.
-        device (torch.device): CPU ou GPU.
 
-    Returns:
-        float: La perte moyenne.
-        float: L'exactitude sur l'ensemble de validation.
-    """
     model.eval()
     running_loss = 0.0
     correct = 0
