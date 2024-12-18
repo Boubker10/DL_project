@@ -12,9 +12,9 @@ from PIL import Image
 
 # Configuration
 VEGETABLE_CLASSES = ['eggplant', 'broccoli', 'carrot', 'cucumber', 'potato', 'radish', 'tomato']
-DOWNLOAD_PATH = "./temp_vegetables_dataset"  # Répertoire temporaire pour les téléchargements
-FINAL_PATH = "./vegetables_dataset"  # Répertoire final avec train/validation/test
-TOTAL_IMAGES_PER_CLASS = 100  # Total requis par classe (70+15+15)
+DOWNLOAD_PATH = "./temp_vegetables_dataset" 
+FINAL_PATH = "./vegetables_dataset"  
+TOTAL_IMAGES_PER_CLASS = 100 
 CHROME_DRIVER_PATH = "C:\\Users\\o\\.wdm\\drivers\\chromedriver\\win64\\130.0.6723.69\\chromedriver-win32\\chromedriver.exe"
 
 # Configuration Selenium
@@ -57,7 +57,7 @@ def scroll_to_load_more(driver, scroll_count=5):
     """Scroller pour charger plus d'images."""
     for _ in range(scroll_count):
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(2)  # Attendre pour laisser les images charger
+        time.sleep(2)  
 
 def scrape_images():
     """Scraper des images pour chaque classe et les stocker dans un répertoire temporaire."""
