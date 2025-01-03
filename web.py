@@ -15,7 +15,7 @@ VEGETABLE_CLASSES = ['eggplant', 'broccoli', 'carrot', 'cucumber', 'potato', 'ra
 DOWNLOAD_PATH = "./temp_vegetables_dataset" 
 FINAL_PATH = "./vegetables_dataset"  
 TOTAL_IMAGES_PER_CLASS = 100 
-CHROME_DRIVER_PATH = "C:\\Users\\o\\.wdm\\drivers\\chromedriver\\win64\\130.0.6723.69\\chromedriver-win32\\chromedriver.exe"
+CHROME_DRIVER_PATH = "\\chromedriver-win32\\chromedriver.exe" # change yours
 
 # Configuration Selenium
 options = Options()
